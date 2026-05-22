@@ -1,0 +1,40 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+    <!-- Dark version of logo (for hero section on dark background) -->
+
+    <!-- Circular background frame -->
+    <circle cx="100" cy="80" r="65" stroke="#c9a961" stroke-width="2" fill="none" opacity="0.8"/>
+
+    <!-- Elegant J initial - large -->
+    <g id="logo-mark-large">
+        <!-- Main J shape -->
+        <path d="M 75 40 Q 85 40 92 48 Q 98 55 98 70 L 98 120 Q 98 140 75 140 Q 60 140 50 125"
+              stroke="#c9a961" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+
+        <!-- Decorative botanical elements inside J -->
+        <!-- Leaf shapes -->
+        <ellipse cx="88" cy="75" rx="2.5" ry="4" fill="#6b8b70" opacity="0.7" transform="rotate(-35 88 75)"/>
+        <ellipse cx="92" cy="82" rx="2" ry="3.5" fill="#7a9b7f" opacity="0.7" transform="rotate(15 92 82)"/>
+
+        <!-- Small flower/berry clusters -->
+        <circle cx="85" cy="95" r="1.2" fill="#d4a574" opacity="0.8"/>
+        <circle cx="82" cy="98" r="1" fill="#d4a574" opacity="0.7"/>
+        <circle cx="88" cy="100" r="1.2" fill="#d4a574" opacity="0.8"/>
+        <circle cx="85" cy="105" r="1" fill="#d4a574" opacity="0.7"/>
+
+        <!-- Stem line connecting elements -->
+        <line x1="85" y1="75" x2="85" y2="105" stroke="#6b8b70" stroke-width="0.8" opacity="0.5"/>
+    </g>
+
+    <!-- Text: JUNEBERRY (below logo) -->
+    <text x="100" y="165" font-family="'Playfair Display', serif" font-size="24" font-weight="400" fill="#c9a961" text-anchor="middle" letter-spacing="2">
+        JUNEBERRY
+    </text>
+
+    <!-- Decorative line element -->
+    <line x1="60" y1="172" x2="140" y2="172" stroke="#c9a961" stroke-width="1" opacity="0.5"/>
+
+    <!-- Text: TEA LOUNGE -->
+    <text x="100" y="190" font-family="'Inter', sans-serif" font-size="10" font-weight="300" fill="#c9a961" text-anchor="middle" letter-spacing="2">
+        TEA LOUNGE
+    </text>
+</svg>

@@ -1,0 +1,30 @@
+# Backend (managed as separate repo)
+juneberry-api/
+
+# Dependencies
+node_modules/
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor
+.vscode/
+.idea/
+*.swp
+
+# Logs
+*.log
+npm-debug.log*
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Vercel
+.vercel
+
+# Claude Code
+.claude/

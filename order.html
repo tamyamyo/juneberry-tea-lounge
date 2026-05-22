@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Online — Juneberry Tea Lounge</title>
+    <meta name="description" content="Order crafted teas, milk drinks, and seasonal specials from Juneberry Tea Lounge. Pickup, delivery, and dine-in available.">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- ANNOUNCEMENT BAR -->
+    <div class="announcement-bar">
+        <div class="announcement-content">
+            <span class="announcement-dot"></span>
+            <span>Online ordering &mdash; Currently in beta &mdash; Live ordering opens Spring 2026</span>
+        </div>
+    </div>
+
+    <!-- NAVIGATION -->
+    <header class="header">
+        <nav class="navbar">
+            <a href="index.html" class="nav-logo">
+                <img src="logo-light.svg" alt="Juneberry Tea Lounge" class="logo-img">
+            </a>
+            <ul class="nav-menu">
+                <li><a href="index.html#menu">Menu</a></li>
+                <li><a href="index.html#story">Our Story</a></li>
+                <li><a href="index.html#experience">Experience</a></li>
+                <li><a href="index.html#visit">Visit</a></li>
+                <li><a href="order.html" class="nav-cta">Order</a></li>
+            </ul>
+            <div class="nav-status">
+                <span class="status-dot" id="statusDot"></span>
+                <span id="statusText">Open Now</span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- ORDER HERO -->
+    <section class="order-hero">
+        <div class="order-hero-content">
+            <div class="hero-eyebrow">
+                <span class="eyebrow-line"></span>
+                <span class="eyebrow-text">Order Online</span>
+                <span class="eyebrow-line"></span>
+            </div>
+            <h1>Crafted to order. Ready when you are.</h1>
+            <p>Each drink hand-made the moment you arrive &mdash; never sitting, never waiting. Pick your method below.</p>
+        </div>
+    </section>
+
+    <!-- ORDER METHOD CARDS -->
+    <section class="order-methods">
+        <div class="container">
+            <div class="order-methods-grid">
+                <!-- Pickup -->
+                <div class="order-method-card featured">
+                    <span class="method-badge">Recommended</span>
+                    <div class="method-icon">
+                        <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M10 18 L10 38 Q10 42 14 42 L34 42 Q38 42 38 38 L38 18"/>
+                            <path d="M6 18 L42 18 L40 12 L8 12 Z"/>
+                            <path d="M20 26 L28 26"/>
+                            <path d="M18 18 Q18 10 24 10 Q30 10 30 18"/>
+                        </svg>
+                    </div>
+                    <h3>Order for Pickup</h3>
+                    <p>Order now, pick up in 15 minutes. Skip the line, grab your drink, and go.</p>
+                    <span class="method-meta">Ready in ~15 min</span>
+                </div>
+
+                <!-- Delivery -->
+                <div class="order-method-card">
+                    <div class="method-icon">
+                        <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M4 32 L4 18 L24 18 L24 32"/>
+                            <path d="M24 22 L34 22 L40 28 L40 32 L24 32"/>
+                            <circle cx="12" cy="34" r="4"/>
+                            <circle cx="34" cy="34" r="4"/>
+                        </svg>
+                    </div>
+                    <h3>Order for Delivery</h3>
+                    <p>Bring Juneberry to your door via DoorDash, Uber Eats, or Grubhub.</p>
+                    <span class="method-meta">30 – 45 min</span>
+                </div>
+
+                <!-- Dine-In -->
+                <div class="order-method-card">
+                    <div class="method-icon">
+                        <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <circle cx="24" cy="20" r="10"/>
+                            <path d="M14 32 L14 42 L34 42 L34 32"/>
+                            <path d="M10 32 L38 32"/>
+                            <path d="M20 16 L28 16 M20 20 L28 20 M20 24 L28 24"/>
+                        </svg>
+                    </div>
+                    <h3>Reserve a Table</h3>
+                    <p>Settle into the lounge. Reserve a seat, order at your table.</p>
+                    <span class="method-meta">Mon &ndash; Sun</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GOLD DIVIDER -->
+    <div class="gold-divider">
+        <span class="divider-ornament">&#x2766;</span>
+    </div>
+
+    <!-- CUSTOMIZER MOCKUP SECTION -->
+    <section class="customizer-section">
+        <div class="container">
+            <div class="section-label" style="justify-content: center;">
+                <span class="label-number">Preview</span>
+                <span class="label-divider"></span>
+                <span class="label-text">How Ordering Will Work</span>
+            </div>
+
+            <div class="customizer-header">
+                <h2>Customize every detail.</h2>
+                <p>A preview of what ordering at Juneberry will look like.</p>
+            </div>
+
+            <!-- CUSTOMIZER INTERFACE MOCKUP -->
+            <div class="customizer">
+                <!-- Visual side -->
+                <div class="customizer-visual">
+                    <div class="drink-vessel brown-sugar-drink">
+                        <div class="vessel-liquid"></div>
+                        <div class="vessel-pearls"></div>
+                        <div class="vessel-foam"></div>
+                    </div>
+                </div>
+
+                <!-- Controls side -->
+                <div class="customizer-controls">
+                    <p class="drink-category">Brown Sugar Series</p>
+                    <h3>Brown Sugar Pearl Milk</h3>
+                    <div class="customizer-price">$7.00</div>
+
+                    <!-- Size -->
+                    <div class="option-group">
+                        <h4>Size</h4>
+                        <div class="option-pills">
+                            <button class="option-pill">Small (12oz)</button>
+                            <button class="option-pill selected">Medium (16oz)</button>
+                            <button class="option-pill">Large (24oz)</button>
+                        </div>
+                    </div>
+
+                    <!-- Sweetness -->
+                    <div class="option-group">
+                        <h4>Sweetness</h4>
+                        <div class="option-pills">
+                            <button class="option-pill">0%</button>
+                            <button class="option-pill">25%</button>
+                            <button class="option-pill selected">50%</button>
+                            <button class="option-pill">75%</button>
+                            <button class="option-pill">100%</button>
+                        </div>
+                    </div>
+
+                    <!-- Ice -->
+                    <div class="option-group">
+                        <h4>Ice</h4>
+                        <div class="option-pills">
+                            <button class="option-pill">No Ice</button>
+                            <button class="option-pill">Less Ice</button>
+                            <button class="option-pill selected">Regular</button>
+                            <button class="option-pill">Extra Ice</button>
+                        </div>
+                    </div>
+
+                    <!-- Toppings -->
+                    <div class="option-group">
+                        <h4>Toppings (+$0.75 each)</h4>
+                        <div class="option-pills">
+                            <button class="option-pill selected">Brown Sugar Pearls</button>
+                            <button class="option-pill">Lychee Jelly</button>
+                            <button class="option-pill">Pudding</button>
+                            <button class="option-pill">Aiyu Jelly</button>
+                            <button class="option-pill">Aloe Vera</button>
+                        </div>
+                    </div>
+
+                    <!-- Add to cart (mockup) -->
+                    <button class="btn btn-outline add-to-cart" onclick="alert('This is a mockup. Ordering opens Spring 2026.');">
+                        Add to Cart &mdash; $7.75
+                    </button>
+
+                    <p class="mockup-notice">&#9737; Interface mockup &mdash; Live ordering coming Spring 2026</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- COMING SOON / EMAIL CAPTURE -->
+    <section class="coming-soon-banner">
+        <div class="container">
+            <div class="section-label" style="justify-content: center;">
+                <span class="label-divider"></span>
+                <span class="label-text">Notify Me</span>
+                <span class="label-divider"></span>
+            </div>
+            <h2>Be the first to order.</h2>
+            <p>We'll send you a single, quiet note when online ordering goes live &mdash; no spam, no marketing nonsense.</p>
+            <form class="coming-soon-form" onsubmit="event.preventDefault(); alert('Thank you. We will let you know.');">
+                <input type="email" placeholder="your@email.com" required class="coming-soon-input">
+                <button type="submit" class="btn btn-primary">Notify Me</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- DIVIDER -->
+    <div class="gold-divider">
+        <span class="divider-ornament">&#x2766;</span>
+    </div>
+
+    <!-- FEATURED DRINKS PREVIEW -->
+    <section class="drinks-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Popular Picks</h2>
+                <p class="section-intro">A taste of what awaits.</p>
+            </div>
+
+            <div class="drinks-grid">
+                <article class="drink-card">
+                    <div class="drink-visual">
+                        <div class="drink-vessel oolong">
+                            <div class="vessel-liquid"></div>
+                            <div class="vessel-foam"></div>
+                        </div>
+                    </div>
+                    <div class="drink-content">
+                        <p class="drink-category">Milk Tea Classics</p>
+                        <h3>Silken Oolong Milk</h3>
+                        <p class="drink-description">Premium roasted oolong with velvety steamed milk.</p>
+                        <div class="drink-footer">
+                            <span class="drink-price">$6.50</span>
+                            <span class="drink-notes">Balanced</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="drink-card">
+                    <div class="drink-visual">
+                        <div class="drink-vessel matcha-drink">
+                            <div class="vessel-liquid"></div>
+                            <div class="vessel-foam"></div>
+                        </div>
+                    </div>
+                    <div class="drink-content">
+                        <p class="drink-category">Matcha &amp; Specialty</p>
+                        <h3>Ceremonial Matcha</h3>
+                        <p class="drink-description">Whisked Japanese matcha with warm milk.</p>
+                        <div class="drink-footer">
+                            <span class="drink-price">$7.25</span>
+                            <span class="drink-notes">Earthy</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="drink-card">
+                    <div class="drink-visual">
+                        <div class="drink-vessel stone-fruit">
+                            <div class="vessel-liquid"></div>
+                            <div class="vessel-ice"></div>
+                        </div>
+                    </div>
+                    <div class="drink-content">
+                        <p class="drink-category">Fruit Refreshers</p>
+                        <h3>Summer Stone Fruit</h3>
+                        <p class="drink-description">Chilled white tea with peach, apricot, vanilla.</p>
+                        <div class="drink-footer">
+                            <span class="drink-price">$6.75</span>
+                            <span class="drink-notes">Bright</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <div class="menu-cta">
+                <a href="index.html#menu" class="btn btn-outline">&larr; Back to Home</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <img src="logo-light.svg" alt="Juneberry" class="footer-logo-img">
+                    <p class="footer-tagline">A refined tea lounge for slow sips and soft conversations.</p>
+                </div>
+
+                <div class="footer-col">
+                    <h5>Menu</h5>
+                    <ul>
+                        <li><a href="index.html#menu">Signature Drinks</a></li>
+                        <li><a href="order.html">Order Online</a></li>
+                        <li><a href="#">Seasonal Specials</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h5>Visit</h5>
+                    <ul>
+                        <li><a href="index.html#visit">Location</a></li>
+                        <li><a href="index.html#visit">Hours</a></li>
+                        <li><a href="#">Reserve a Table</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h5>Connect</h5>
+                    <ul>
+                        <li><a href="#" class="social-link">Instagram</a></li>
+                        <li><a href="#" class="social-link">Facebook</a></li>
+                        <li><a href="#" class="social-link">TikTok</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; <span id="footerYear">2026</span> Juneberry Tea Lounge. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#">Privacy</a>
+                    <span class="legal-divider">·</span>
+                    <a href="#">Terms</a>
+                    <span class="legal-divider">·</span>
+                    <a href="#">Accessibility</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

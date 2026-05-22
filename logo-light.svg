@@ -1,0 +1,24 @@
+<svg viewBox="0 0 200 80" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+    <!-- Light version of logo for use on dark backgrounds -->
+
+    <!-- Elegant J initial -->
+    <g id="logo-mark">
+        <path d="M 30 15 Q 35 15 38 18 Q 40 20 40 25 L 40 55 Q 40 65 30 65 Q 25 65 20 60"
+              stroke="#c9a961" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+
+        <!-- Decorative leaf accent -->
+        <circle cx="45" cy="35" r="1.5" fill="#c9a961" opacity="0.6"/>
+        <circle cx="50" cy="32" r="1" fill="#c9a961" opacity="0.5"/>
+        <circle cx="48" cy="45" r="1.5" fill="#c9a961" opacity="0.6"/>
+    </g>
+
+    <!-- Text: JUNEBERRY -->
+    <text x="65" y="48" font-family="'Playfair Display', serif" font-size="22" font-weight="400" fill="#c9a961" letter-spacing="2">
+        JUNEBERRY
+    </text>
+
+    <!-- Text: TEA LOUNGE (smaller, under main text) -->
+    <text x="65" y="62" font-family="'Inter', sans-serif" font-size="8" font-weight="300" fill="#c9a961" letter-spacing="1.5" opacity="0.8">
+        TEA LOUNGE
+    </text>
+</svg>
