@@ -159,6 +159,32 @@
         textarea { resize: vertical; min-height: 90px; line-height: 1.6; }
         select { appearance: none; -webkit-appearance: none; cursor: pointer; }
         select option { color: #0f2817; }
+        input[type="file"] {
+            width: 100%;
+            padding: 0.7rem 1.1rem;
+            border: 1px dashed rgba(201, 169, 97, 0.4);
+            background: rgba(255, 255, 255, 0.04);
+            color: rgba(245, 243, 240, 0.7);
+            font-family: inherit;
+            font-size: 0.82rem;
+            border-radius: 1px;
+            cursor: pointer;
+        }
+        input[type="file"]::file-selector-button {
+            margin-right: 1rem;
+            padding: 0.45rem 0.9rem;
+            border: 1px solid #c9a961;
+            background: transparent;
+            color: #c9a961;
+            font-family: inherit;
+            font-size: 0.72rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            border-radius: 1px;
+            cursor: pointer;
+            transition: all 0.25s ease;
+        }
+        input[type="file"]::file-selector-button:hover { background: rgba(201, 169, 97, 0.15); }
         input::placeholder, textarea::placeholder { color: rgba(245, 243, 240, 0.4); }
         input:focus, select:focus, textarea:focus {
             outline: none;
@@ -357,6 +383,10 @@
             <p class="hire-intro">We open this summer and we're meeting people now. Tell us a little about yourself and how you'd like to work &mdash; we'll reach out as we build the opening team.</p>
 
             <form class="hire-form" id="hireForm" onsubmit="return submitApplication(event)">
+                <input type="hidden" name="access_key" value="abda4397-74fb-4186-9144-c6f60db6c3f3">
+                <input type="hidden" name="subject" value="New Juneberry job application">
+                <input type="hidden" name="from_name" value="Juneberry Careers">
+                <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
                 <div class="field-row">
                     <div>
                         <label class="field-label" for="appName">Name</label>
@@ -406,63 +436,72 @@
             </form>
 
             <div class="form-status" id="hireStatus" role="status" aria-live="polite"></div>
-            <p class="form-note">This opens your email app with everything filled in &mdash; just hit send. Prefer to write us directly? Email <a href="mailto:juneberrytea@gmail.com?subject=Job%20Interest%20%E2%80%94%20Juneberry%20Tea%20Lounge">juneberrytea@gmail.com</a>.</p>
+            <p class="form-note">We'll review and reach out by email. Have a resume? Send it to <a href="mailto:juneberrytea@gmail.com?subject=Resume%20%E2%80%94%20Juneberry%20Job%20Application">juneberrytea@gmail.com</a> and we'll add it to your application.</p>
         </section>
 
         <div class="footer">&copy; 2026 Juneberry Tea Lounge</div>
     </div>
 
     <script>
+        var WEB3FORMS_KEY = 'abda4397-74fb-4186-9144-c6f60db6c3f3';
+        var WEB3FORMS_URL = 'https://api.web3forms.com/submit';
+
         function notifyMe(e) {
             e.preventDefault();
+            var form = e.target;
+            var btn = form.querySelector('button');
             var email = document.getElementById('notifyEmail').value.trim();
-            var subject = 'Notify me when Juneberry opens';
-            var body = 'Please add me to the opening list:\n\n' + email;
-            window.location.href = 'mailto:juneberrytea@gmail.com'
-                + '?subject=' + encodeURIComponent(subject)
-                + '&body=' + encodeURIComponent(body);
-            var btn = e.target.querySelector('button');
-            if (btn) {
-                btn.textContent = 'Thank you';
-                setTimeout(function () { btn.textContent = 'Notify Me'; }, 3000);
-            }
+
+            var data = new FormData();
+            data.append('access_key', WEB3FORMS_KEY);
+            data.append('subject', 'New Juneberry newsletter signup');
+            data.append('from_name', 'Juneberry Website');
+            data.append('email', email);
+            data.append('message', 'Please add this address to the opening list: ' + email);
+
+            if (btn) { btn.disabled = true; btn.textContent = 'Sending…'; }
+            fetch(WEB3FORMS_URL, { method: 'POST', body: data })
+                .then(function (r) { return r.json(); })
+                .then(function (j) {
+                    if (btn) { btn.disabled = false; btn.textContent = j.success ? 'Thank you' : 'Try again'; }
+                    if (j.success) {
+                        document.getElementById('notifyEmail').value = '';
+                        setTimeout(function () { if (btn) btn.textContent = 'Notify Me'; }, 4000);
+                    }
+                })
+                .catch(function () {
+                    if (btn) { btn.disabled = false; btn.textContent = 'Try again'; }
+                });
             return false;
         }
 
         function submitApplication(e) {
             e.preventDefault();
             var form = e.target;
-            var name = form.name.value.trim();
-            var email = form.email.value.trim();
-            var phone = form.phone.value.trim();
-            var position = form.position.value;
-            var availability = Array.prototype.slice
-                .call(form.querySelectorAll('input[name="availability"]:checked'))
-                .map(function (c) { return c.value; });
-            var message = form.message.value.trim();
-
-            var subject = 'Job Interest — ' + (name || 'Juneberry Applicant');
-            var lines = [
-                'Name: ' + name,
-                'Email: ' + email,
-                phone ? 'Phone: ' + phone : null,
-                'Role of interest: ' + position,
-                'Availability: ' + (availability.length ? availability.join(', ') : '(not specified)'),
-                '',
-                'About me:',
-                message || '(none provided)'
-            ].filter(function (l) { return l !== null; });
-
-            var mailto = 'mailto:juneberrytea@gmail.com'
-                + '?subject=' + encodeURIComponent(subject)
-                + '&body=' + encodeURIComponent(lines.join('\n'));
-
-            window.location.href = mailto;
-
             var status = document.getElementById('hireStatus');
-            if (status) {
-                status.textContent = 'Opening your email app… if nothing happens, email juneberrytea@gmail.com directly.';
-            }
+            var btn = form.querySelector('button[type="submit"]');
+
+            status.style.color = '#c9a961';
+            status.textContent = 'Sending your application…';
+            if (btn) { btn.disabled = true; btn.textContent = 'Sending…'; }
+
+            fetch(WEB3FORMS_URL, { method: 'POST', body: new FormData(form) })
+                .then(function (r) { return r.json(); })
+                .then(function (j) {
+                    if (j.success) {
+                        form.reset();
+                        status.style.color = '#c9a961';
+                        status.textContent = 'Thank you — your application is in. We’ll be in touch soon.';
+                        if (btn) { btn.disabled = false; btn.textContent = 'Application Sent ✓'; }
+                    } else {
+                        throw new Error(j.message || 'Submission failed');
+                    }
+                })
+                .catch(function () {
+                    status.style.color = '#e89f9f';
+                    status.innerHTML = 'Something went wrong. Please email <a href="mailto:juneberrytea@gmail.com" style="color:#c9a961">juneberrytea@gmail.com</a> with your resume attached.';
+                    if (btn) { btn.disabled = false; btn.textContent = 'Send Application'; }
+                });
             return false;
         }
     </script>
