@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="300 265 600 600" role="img" aria-label="Juneberry">
+  <defs>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#F7E6B0"/>
+      <stop offset="0.38" stop-color="#D6AF55"/>
+      <stop offset="0.72" stop-color="#A97824"/>
+      <stop offset="1" stop-color="#F4D88B"/>
+    </linearGradient>
+    <linearGradient id="leaf" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#6E7B49"/>
+      <stop offset="1" stop-color="#172B1C"/>
+    </linearGradient>
+    <style>
+      .gold-stroke{fill:none;stroke:url(#gold);stroke-width:3;stroke-linecap:round;opacity:.95}
+      .stem{fill:none;stroke:#c8a35a;stroke-width:3;stroke-linecap:round}
+      .leaf-vein{fill:none;stroke:#c6a35d;stroke-width:1.1;opacity:.75}
+    </style>
+  </defs>
+
+  <path class="gold-stroke" d="M 424 704 A 286 286 0 0 1 642 286"/>
+  <path class="gold-stroke" d="M 773 302 A 286 286 0 0 1 705 812"/>
+
+  <text x="627" y="748" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="650" font-weight="700" fill="url(#gold)">J</text>
+
+  <g>
+    <path class="stem" d="M 505 724 C 555 700, 592 655, 636 588 C 654 560, 665 542, 682 520"/>
+    <path class="stem" d="M 581 658 C 559 623, 546 604, 533 582"/>
+    <path class="stem" d="M 612 620 C 590 588, 582 565, 579 545"/>
+    <path class="stem" d="M 636 590 C 673 597, 697 610, 716 632"/>
+    <path class="stem" d="M 640 585 C 666 562, 681 549, 699 540"/>
+    <g>
+      <ellipse cx="546" cy="695" rx="18" ry="42" fill="url(#leaf)" transform="rotate(-55 546 695)"/>
+      <path class="leaf-vein" d="M 519 717 C 539 697, 553 681, 571 666"/>
+      <ellipse cx="590" cy="650" rx="20" ry="48" fill="url(#leaf)" transform="rotate(-35 590 650)"/>
+      <path class="leaf-vein" d="M 574 687 C 584 657, 594 632, 606 610"/>
+      <ellipse cx="628" cy="661" rx="18" ry="43" fill="url(#leaf)" transform="rotate(68 628 661)"/>
+      <path class="leaf-vein" d="M 595 647 C 620 657, 641 668, 663 680"/>
+      <ellipse cx="536" cy="587" rx="15" ry="39" fill="url(#leaf)" transform="rotate(-42 536 587)"/>
+      <path class="leaf-vein" d="M 520 616 C 531 592, 542 572, 554 554"/>
+      <ellipse cx="668" cy="548" rx="14" ry="34" fill="url(#leaf)" transform="rotate(38 668 548)"/>
+      <path class="leaf-vein" d="M 654 525 C 665 544, 674 562, 683 580"/>
+    </g>
+    <g>
+      <circle cx="603" cy="714" r="17" fill="#273724" stroke="#b99045" stroke-width="1.2"/>
+      <circle cx="636" cy="700" r="16" fill="#273724" stroke="#b99045" stroke-width="1.2"/>
+      <circle cx="686" cy="622" r="16" fill="#273724" stroke="#b99045" stroke-width="1.2"/>
+      <circle cx="706" cy="651" r="17" fill="#273724" stroke="#b99045" stroke-width="1.2"/>
+    </g>
+    <g transform="translate(680 575)">
+      <g fill="#F4E8C6" stroke="#caa456" stroke-width="1.2">
+        <ellipse cx="0" cy="-16" rx="9" ry="17"/>
+        <ellipse cx="15" cy="-4" rx="9" ry="17" transform="rotate(72 15 -4)"/>
+        <ellipse cx="9" cy="13" rx="9" ry="17" transform="rotate(144 9 13)"/>
+        <ellipse cx="-9" cy="13" rx="9" ry="17" transform="rotate(216 -9 13)"/>
+        <ellipse cx="-15" cy="-4" rx="9" ry="17" transform="rotate(288 -15 -4)"/>
+      </g>
+      <circle cx="0" cy="0" r="5" fill="#b88d3a"/>
+    </g>
+  </g>
+</svg>
